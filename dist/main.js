@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("console.log('Hello World!');\n\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("throw new Error(\"Module parse failed: Unexpected token (21:9)\\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\\n| }\\n| \\n> fucntion ToDo() {\\n|     this.ToDo = '';\\n|     this.dateCreated = Date.now();\");\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 

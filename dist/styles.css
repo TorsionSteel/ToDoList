@@ -1,0 +1,40 @@
+html {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+}
+
+.notebook {
+    min-width: 600px;
+    border-style: solid;
+}
+
+.head {
+    font-size: larger;
+    text-align: center;
+}
+
+.row:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.column {
+    float: left;
+}
+
+.left {
+    width: 200px;
+    float: left;
+}
+
+.right {
+    width: auto;
+    overflow: hidden;
+}
+
+.button {
+    border-radius: 0%;
+    border-style: none;
+    background-color: red;
+}
