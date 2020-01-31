@@ -12,14 +12,20 @@
             <div class='column left' id='lists'>
                 <div>
                     <h2>To Do Lists</h2>
-                    <button class='button' id='newList'>New List</button>
+                    <form name='myLists' onSubmit='newList()'>
+                        <input type='text' name='newListName'>
+                        <input type='submit' value='New List' class='button'>
+                    </form>
                 </div>
                 <p>My Lists</p>
             </div>
             <div class='column right' id='todoitems'>
                 <div>
                     <h2>To Do Items</h2>
-                    <button class='button' id='newToDo'>New To Do!</button>
+                    <form name='toDo' onSubmit='newToDo()'>
+                        <input type='text' name='newToDoName'>
+                        <input type='submit' value='New To Do' class='button'>
+                    </form>
                 </div> 
                 <p>My Item</p>
             </div>

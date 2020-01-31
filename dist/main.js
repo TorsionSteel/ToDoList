@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("throw new Error(\"Module parse failed: Unexpected token (21:9)\\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\\n| }\\n| \\n> fucntion ToDo() {\\n|     this.ToDo = '';\\n|     this.dateCreated = Date.now();\");\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("// function AllLists() {\n//     this.lists = [];\n//     this.activeList = '';\n// }\n\n// function List(title) {\n//     this.title = title;\n//     this.dateCreated = Date.now();\n//     this.toDo = [];\n// }\n\n// fucntion ToDo() {\n//     this.ToDo = '';\n//     this.dateCreated = Date.now();\n//     this.isComplete = false;\n//     this.dateCompleted = '';\n// }\n\n\n\nfunction newList(e) {\n    e = e || window.event;\n    e = e.target || e.srcElement;\n\n\n    console.log('New List');\n\n}\n\nfunction newToDo(e) {\n    console.log('New To Do');\n\n}\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 

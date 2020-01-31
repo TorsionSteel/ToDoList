@@ -1,38 +1,33 @@
+// function AllLists() {
+//     this.lists = [];
+//     this.activeList = '';
+// }
 
-document.getElementById("newList").addEventListener("click", function(){
-    console.log('newList');
-  });
+// function List(title) {
+//     this.title = title;
+//     this.dateCreated = Date.now();
+//     this.toDo = [];
+// }
 
-document.getElementById("newToDo").addEventListener("click", function(){
-console.log('newToDo');
-});
+// fucntion ToDo() {
+//     this.ToDo = '';
+//     this.dateCreated = Date.now();
+//     this.isComplete = false;
+//     this.dateCompleted = '';
+// }
 
-function AllLists() {
-    this.lists = [];
-    this.activeList = '';
+
+
+function newList(e) {
+    e = e || window.event;
+    e = e.target || e.srcElement;
+
+
+    console.log('New List');
+
 }
 
-function List(title) {
-    this.title = title;
-    this.dateCreated = Date.now();c
-    this.toDo = [];
-}
-
-fucntion ToDo() {
-    this.ToDo = '';
-    this.dateCreated = Date.now();
-    this.isComplete = false;
-    this.dateCompleted = '';
-}
-
-
-
-
-
-
-
-function newList() {
-
-
+function newToDo(e) {
+    console.log('New To Do');
 
 }
