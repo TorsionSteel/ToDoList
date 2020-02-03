@@ -11,23 +11,30 @@
         <div class='row'>
             <div class='column left' id='lists'>
                 <div>
-                    <h2>To Do Lists</h2>
-                    <form name='myLists' onSubmit='newList()'>
-                        <input type='text' name='newListName'>
-                        <input type='submit' value='New List' class='button'>
+                    <div id='allList' class='sectionTitle'>
+                        To Do Lists
+                    </div>
+                    <form name='myLists' id='myLists'>
+                        <input type='text' id='newListName'>
+                        <input type='button' id='listSubmit' class='button' value='New List'>
                     </form>
                 </div>
-                <p>My Lists</p>
+                <div id='listCatalog' class='listCatalog'>
+                    
+                </div>
             </div>
             <div class='column right' id='todoitems'>
                 <div>
-                    <h2>To Do Items</h2>
-                    <form name='toDo' onSubmit='newToDo()'>
+                    <div id='currentList' class='sectionTitle'>
+
+                    </div>
+                    <form name='toDo' id='toDo' onSubmit='newToDo()'>
                         <input type='text' name='newToDoName'>
-                        <input type='submit' value='New To Do' class='button'>
+                        <input type='submit' id='toDoSubmit' value='New To Do' class='button'>
                     </form>
                 </div> 
-                <p>My Item</p>
+            </div id='toDoItem'>
+            
             </div>
         </div>
     </body>

@@ -86,14 +86,27 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/dataConstructs.js":
+/*!*******************************!*\
+  !*** ./src/dataConstructs.js ***!
+  \*******************************/
+/*! exports provided: AllLists, List, ToDo */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"AllLists\", function() { return AllLists; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"List\", function() { return List; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"ToDo\", function() { return ToDo; });\nfunction AllLists() {\n    this.activeList = 'To Do List';\n    this.activeTitle = 'To Do List';\n}\n\nfunction List(title) {\n    this.id = '';\n    this.title = title;\n    this.dateCreated = Date.now();\n    this.toDo = {};\n}\n\nfunction ToDo(descrip) {\n    this.ToDo = descrip;\n    this.dateCreated = Date.now();\n    this.isComplete = false;\n    this.dateCompleted = '';\n    this.list = '';\n}\n\n\n\n//# sourceURL=webpack:///./src/dataConstructs.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-eval("// function AllLists() {\n//     this.lists = [];\n//     this.activeList = '';\n// }\n\n// function List(title) {\n//     this.title = title;\n//     this.dateCreated = Date.now();\n//     this.toDo = [];\n// }\n\n// fucntion ToDo() {\n//     this.ToDo = '';\n//     this.dateCreated = Date.now();\n//     this.isComplete = false;\n//     this.dateCompleted = '';\n// }\n\n\n\nfunction newList(e) {\n    e = e || window.event;\n    e = e.target || e.srcElement;\n\n\n    console.log('New List');\n\n}\n\nfunction newToDo(e) {\n    console.log('New To Do');\n\n}\n\n//# sourceURL=webpack:///./src/index.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _dataConstructs_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./dataConstructs.js */ \"./src/dataConstructs.js\");\n/*\nfigure out why when object is created it can't be called.  Is it living locally in a function only?\nReview how objects work.  It's not clear why I can't call an object by name.\n*/\n\n\nconst toDoIndex = new _dataConstructs_js__WEBPACK_IMPORTED_MODULE_0__[\"AllLists\"]();\nlet allLists = [];\nlet index = 0;\ndisplayActiveList();\n\ndocument.getElementById('listSubmit').addEventListener('click', newList);\ndocument.getElementById('toDoSubmit').addEventListener('click', newToDo);\n\nfunction newList() {\n    let name = document.getElementById('newListName').value;\n    if (name.length > 0) {\n        let listID = 'list' + index++;\n        this[listID] = new _dataConstructs_js__WEBPACK_IMPORTED_MODULE_0__[\"List\"](name);\n        this[listID].id = listID;\n        this[listID].title = name;\n    \n        console.log(this[listID]);\n        console.log(allLists);\n        console.log(this[listID]);\n\n        toDoIndex.activeList = listID;\n        toDoIndex.activeTitle = this[listID].title;\n\n        listCatalog('listCatalog', name, this[listID].id);\n    } else {\n        alert('Please provide list name.');\n    }\n    displayActiveList();\n}\n\nfunction newToDo(descrip, activeList) {\n    console.log('New To Do');\n    let newToDo = new _dataConstructs_js__WEBPACK_IMPORTED_MODULE_0__[\"ToDo\"](descrip);\n}\n\nfunction listCatalog(divSection, link, listID) {\n    let button = document.createElement('button');\n    button.innerHTML = link;\n    button.classList.add('linkList');\n    button.id = 'listCatalog';\n    button.name = listID;\n    \n    document.getElementById(divSection).appendChild(button);\n}\n\ndocument.getElementById('listCatalog').addEventListener('click', (e) => {\n    clickId(e.target.name);\n});\n\nfunction clickId(clickedId) {\n    console.log(clickedId);\n    toDoIndex.activeList = clickedId;\n    toDoIndex.activeTitle = clickedID.title;\n    \n    console.log(toDoIndex.activeList);\n    console.log(toDoIndex.activeTitle);\n\n    displayActiveList();\n}\n\nfunction displayActiveList () {\n    document.getElementById('currentList').innerHTML = toDoIndex.activeTitle;\n}\n\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 

@@ -5,6 +5,7 @@ html {
 
 .notebook {
     min-width: 600px;
+    max-width: 1000px;
     border-style: solid;
 }
 
@@ -37,4 +38,34 @@ html {
     border-radius: 0%;
     border-style: none;
     background-color: red;
+
+    padding: 5px;
+    margin: 5px;
+}
+
+.buttonList {
+    border-radius: 0%;
+    border-style: none;
+
+    background-color: none;
+
+    cursor: pointer;
+
+    margin: 5px;
+    padding: 5px;
+
+    vertical-align: middle;
+}
+
+.linkList {
+    color: black;
+}
+
+.listCatalog button{
+    display: block;
+}
+
+.sectionTitle {
+    font-size: larger;
+    font-style: bold;
 }
