@@ -10,8 +10,9 @@ function List(title) {
     this.toDo = {};
 }
 
-function ToDo(descrip) {
-    this.ToDo = descrip;
+function ToDo(title) {
+    this.id = '';
+    this.title = title;
     this.dateCreated = Date.now();
     this.isComplete = false;
     this.dateCompleted = '';

@@ -1,7 +1,3 @@
-/*
-figure out why when object is created it can't be called.  Is it living locally in a function only?
-Review how objects work.  It's not clear why I can't call an object by name.
-*/
 import { AllLists, List, ToDo } from './dataConstructs.js';
 
 const toDoIndex = new AllLists();
@@ -19,32 +15,50 @@ function newList() {
         this[listID] = new List(name);
         this[listID].id = listID;
         this[listID].title = name;
-    
-        console.log(this[listID]);
-        console.log(allLists);
-        console.log(this[listID]);
 
         toDoIndex.activeList = listID;
         toDoIndex.activeTitle = this[listID].title;
 
-        listCatalog('listCatalog', name, this[listID].id);
+        allLists.push(this[listID]);
+
+        listCatalog('listCatalog', name, listID);
+
     } else {
         alert('Please provide list name.');
     }
     displayActiveList();
 }
 
-function newToDo(descrip, activeList) {
-    console.log('New To Do');
-    let newToDo = new ToDo(descrip);
+
+function newToDo() {
+    let name = document.getElementById('newToDo').value;
+    console.log(name);
+    if (name.length > 0 && activeList.title != 'To Do List') {
+        let itemID = 'item' + index++;
+        this[itemID] = new ToDo(name);
+        this[itemID].id = itemID;
+        this[itemID].title = name;
+
+        console.log(this[itemID]);
+
+        //.push(this[listID]);
+
+       // listCatalog('listCatalog', name, itemID);
+
+    } else {
+        alert('Please provide list name.');
+    }
+    displayActiveList();
+
+    //let newToDo = new ToDo(descrip);
 }
 
-function listCatalog(divSection, link, listID) {
+function listCatalog(divSection, link, ID) {
     let button = document.createElement('button');
     button.innerHTML = link;
     button.classList.add('linkList');
     button.id = 'listCatalog';
-    button.name = listID;
+    button.name = ID;
     
     document.getElementById(divSection).appendChild(button);
 }
@@ -54,12 +68,10 @@ document.getElementById('listCatalog').addEventListener('click', (e) => {
 });
 
 function clickId(clickedId) {
-    console.log(clickedId);
-    toDoIndex.activeList = clickedId;
-    toDoIndex.activeTitle = clickedID.title;
-    
-    console.log(toDoIndex.activeList);
-    console.log(toDoIndex.activeTitle);
+    let found = allLists.find(x => x.id == clickedId);
+
+    toDoIndex.activeList = found.id;
+    toDoIndex.activeTitle = found.title;
 
     displayActiveList();
 }
