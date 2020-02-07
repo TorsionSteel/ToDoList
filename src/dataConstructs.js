@@ -7,7 +7,7 @@ function List(title) {
     this.id = '';
     this.title = title;
     this.dateCreated = Date.now();
-    this.toDo = {};
+    this.toDo = [];
 }
 
 function ToDo(title) {
